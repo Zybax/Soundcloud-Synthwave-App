@@ -1,0 +1,82 @@
+a{
+    text-decoration: none;
+    color:white;
+}
+a:hover{
+    color:white;
+    text-decoration: none;
+}
+.artist-name{
+color: rgb(185, 185, 185);
+}
+
+.fa-play{
+    margin-left: 3px;
+}
+
+.fa-heart,.fa-ellipsis-h{
+margin-right: 10px;
+}
+
+.music-item{
+    width: 200px;
+    transition: 0.25s;
+}
+
+.music-item-container{
+margin-bottom: 20px;
+}
+
+.music-item-image-container{
+    background-image: url("https://loremflickr.com/200/200/?random=1");
+    width: 200px;
+    height: 200px;
+    transition: 0.25s;
+    border-radius: 3px;
+}
+
+.music-item:hover{
+    cursor: pointer;
+}
+
+.music-item:hover .music-item-image-container {
+    box-shadow: inset 0px -5px 120px rgba(0, 0, 0, 0.486);
+    cursor: pointer;
+}
+
+.music-item:hover .music-options{
+    opacity: 1;
+}
+
+.music-item:hover .play-icon{
+    opacity: 1;
+}
+
+
+.music-options{
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    color:white;
+    opacity: 0;
+    transition: 0.25s;
+}
+
+.play-icon{
+    width: 55px;
+    height: 55px;
+    border:none;
+    border-radius: 100px;
+    background: orangered;
+    color:white;
+    font-weight: bold;
+    margin-top: 70px;
+    text-align: center;
+    opacity: 0;
+    transition: 0.25s;
+}
+
+.track-name{
+    margin-bottom: 0px;
+}
+
