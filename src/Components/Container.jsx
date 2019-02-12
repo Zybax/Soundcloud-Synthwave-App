@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Grid from './../Containers/Grid'
-import MusicItem from './../Containers/MusicItem'
 
 export default class Container extends Component {
   constructor(props) {
@@ -13,20 +11,7 @@ export default class Container extends Component {
   render() {
     return (
       <div className={'container'}>
-           <Grid>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-             <MusicItem/>
-           </Grid>
+           {this.props.children}
       </div>
     )
   }
