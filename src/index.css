@@ -1,33 +1,65 @@
-a{
+a {
     text-decoration: none;
-    color:white;
-}
-a:hover{
-    color:white;
-    text-decoration: none;
-}
-.artist-name{
-color: rgb(185, 185, 185);
+    color: white;
 }
 
-.fa-play{
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.artist-name {
+    color: rgb(185, 185, 185);
+}
+
+.App{
+ background: rgb(233, 233, 233);
+}
+
+.container{
+    background: rgb(245, 245, 245);
+    padding: 0px;
+}
+.cta-sub-title,
+.cta-title {
+    color: white;
+    width: 100%;
+    text-align: center;
+    height: auto;
+}
+
+.cta-sub-title {
+margin-top: -90px;
+}
+
+.cta-title {
+    margin-top: 100px;
+}
+
+.fa-play {
     margin-left: 3px;
 }
 
-.fa-heart,.fa-ellipsis-h{
-margin-right: 10px;
+.fa-heart,
+.fa-ellipsis-h {
+    margin-right: 10px;
 }
 
-.music-item{
+.header {
+    background-image: url("https://loremflickr.com/1920/1080");
+    height: 40vh;
+}
+
+.music-item {
     width: 200px;
     transition: 0.25s;
 }
 
-.music-item-container{
-margin-bottom: 20px;
+.music-item-container {
+    margin-bottom: 20px;
 }
 
-.music-item-image-container{
+.music-item-image-container {
     background-image: url("https://loremflickr.com/200/200/?random=1");
     width: 200px;
     height: 200px;
@@ -35,7 +67,7 @@ margin-bottom: 20px;
     border-radius: 3px;
 }
 
-.music-item:hover{
+.music-item:hover {
     cursor: pointer;
 }
 
@@ -44,31 +76,38 @@ margin-bottom: 20px;
     cursor: pointer;
 }
 
-.music-item:hover .music-options{
+.music-item:hover .music-options {
     opacity: 1;
 }
 
-.music-item:hover .play-icon{
+.music-item:hover .play-icon {
     opacity: 1;
 }
 
 
-.music-options{
+.music-options {
     width: 100%;
     height: 40px;
     margin-top: 30px;
-    color:white;
+    color: white;
     opacity: 0;
     transition: 0.25s;
 }
 
-.play-icon{
+.overlay {
+    background: rgba(0, 0, 0, 0.411);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.play-icon {
     width: 55px;
     height: 55px;
-    border:none;
+    border: none;
     border-radius: 100px;
     background: orangered;
-    color:white;
+    color: white;
     font-weight: bold;
     margin-top: 70px;
     text-align: center;
@@ -76,7 +115,6 @@ margin-bottom: 20px;
     transition: 0.25s;
 }
 
-.track-name{
+.track-name {
     margin-bottom: 0px;
 }
-
