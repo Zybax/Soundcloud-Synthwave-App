@@ -12,9 +12,9 @@ export default class MusicItem extends Component {
 
   render() {
     return (
-    <div className={"music-item-container d-flex flex-wrap justify-content-center align-items-start col-lg-3 col-md-4 col-sm-6 col-xs-12"}>
+    <div className={"music-item-container d-flex flex-wrap justify-content-center align-items-start col-lg-3 col-md-3 col-sm-6 col-xs-12"}>
       <div className={"music-item d-flex flex-row flex-wrap center"}>
-        <div style={{backgroundImage:`url(${this.props.background})`}} className={"music-item-image-container d-flex flex-wrap justify-content-center align-items-center"}>
+        <div onClick = {() => this.props.currentTrackhandler(this.props.url)} style={{backgroundImage:`url(${this.props.background})`}} className={"music-item-image-container d-flex flex-wrap justify-content-center align-items-center"}>
 
           <div className={"play-icon d-flex flex-wrap justify-content-center align-items-center"}>
             <i className={"fas fa-play"}></i>
@@ -37,9 +37,12 @@ export default class MusicItem extends Component {
   }
 }
 
+/***  Proptypes  ***/
+
 MusicItem.propTypes = {
   name: PropTypes.string.isRequired,
   artist: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  url: PropTypes.string.isRequired
+  background: PropTypes.string, // Not all tracks have an image
+  url: PropTypes.string.isRequired,
+  currentTrackHandler: PropTypes.func
 };

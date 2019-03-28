@@ -14,11 +14,12 @@ class App extends Component {
     super(props)
   
     this.state = {
-      data: []
+      data: [],
+      currentTrack: ""
     }
   }
 
-  componentDidMount= () => {
+  componentDidMount = () => {
     fetch(`https://api.soundcloud.com/tracks/?client_id=${clientID}`).then(function(response) {
         return response.json()
       }).then((json) => {
@@ -29,9 +30,14 @@ class App extends Component {
         console.log('parsing failed', ex);
       })
   }
+
+  currentTrackhandler = (track) =>{
+      this.setState({currentTrack : track});
+
+  }
   
   render() {
-    console.log(this.state.data);
+    console.log(this.state);
     return (
       <div className="app">
         <Container>
@@ -52,12 +58,13 @@ class App extends Component {
                 artist = {artist}
                 name = {name}
                 url = {url}
+                currentTrackhandler = {this.currentTrackhandler}
               />)
             })
             }
              
            </Grid>
-           <AudioContainer url={"https://api.soundcloud.com/tracks/596040849/stream?client_id=95f22ed54a5c297b1c41f72d713623ef"}/>
+           <AudioContainer url={this.state.currentTrack}/>
         </Container>
       </div>
     );
