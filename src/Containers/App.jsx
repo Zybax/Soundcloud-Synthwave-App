@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Container from './Container';
-import Grid from './../Containers/Grid';
+import Container from '../Components/Container';
+import Grid from '../Components/Grid';
 import MusicItem from './../Containers/MusicItem';
 import Header from './../Components/Header';
 import Search from './../Components/Search';
-import AudioContainer from './../Components/AudioContainer';
+import AudioContainer from './AudioContainer';
 import './../index.css';
 import 'whatwg-fetch';
 
@@ -15,12 +15,14 @@ class App extends Component {
   
     this.state = {
       data: [],
-      currentTrack: ""
+      currentTrack: "",
+      query: "*"
     }
   }
 
-  componentDidMount = () => {
-    fetch(`https://api.soundcloud.com/tracks/?client_id=${clientID}`).then(function(response) {
+  apiRequest = () => {
+    fetch(`https://api.soundcloud.com/tracks?genres=synthwave&client_id=${clientID}&q=${this.state.query}&limit=50`).then(
+      function(response) {
         return response.json()
       }).then((json) => {
         console.log('parsed json', json);
@@ -29,6 +31,10 @@ class App extends Component {
       }).catch((ex) => {
         console.log('parsing failed', ex);
       })
+  }
+
+  componentDidMount = () => {
+    this.apiRequest();
   }
 
   currentTrackhandler = (track) =>{
