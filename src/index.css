@@ -1,10 +1,10 @@
 a {
     text-decoration: none;
-    color: white;
+    color: #fff;
 }
 
 a:hover {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -27,6 +27,8 @@ a:hover {
 
 .app {
     background: #1a1b1f;
+    height: 100%;
+    color: #fff;
 }
 
 .custom-btn {
@@ -36,12 +38,12 @@ a:hover {
     -ms-border-radius: 0px 3px 3px 0px;
     -o-border-radius: 0px 3px 3px 0px;
     background-color: #62058a;
-    border-color:#62058a;
+    border-color: #62058a;
 }
 
-.custom-btn:hover{
+.custom-btn:hover {
     background-color: #480166;
-    border-color:#480166;
+    border-color: #480166;
 }
 
 .container {
@@ -74,8 +76,8 @@ a:hover {
     margin-right: 10px;
 }
 
-.grid{
-    padding:0px 9px;
+.grid {
+    padding: 0px 9px;
 }
 
 .header {
@@ -84,7 +86,7 @@ a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
-    height: 40vh;
+    height: 45vh;
 }
 
 .input-search {
@@ -95,7 +97,6 @@ a:hover {
     -ms-border-radius: 0px;
     -o-border-radius: 0px;
 }
-
 
 .music-item {
     width: 160px;
@@ -155,6 +156,14 @@ a:hover {
     width: 90%;
 }
 
+.not-found {
+    padding-bottom: 20%;
+}
+
+.not-found-message{
+    text-align: center;
+}
+
 .overlay {
     background: rgba(0, 0, 0, 0.411);
     position: absolute;
@@ -196,14 +205,13 @@ a:hover {
         width: 70%;
     }
 
-    .music-item{
+    .music-item {
         justify-content: flex-start;
     }
 
-    
-.music-item-info {
-    text-align: left;
-    align-items: flex-start;
-}
+    .music-item-info {
+        text-align: left;
+        align-items: flex-start;
+    }
 
 }

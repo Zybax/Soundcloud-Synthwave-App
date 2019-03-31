@@ -1,76 +1,62 @@
 import React, { Component } from 'react';
 import Container from '../Components/Container';
-import Grid from '../Components/Grid';
-import MusicItem from './../Containers/MusicItem';
 import Header from './../Components/Header';
+import GridContainer from './GridContainer';
 import Search from './../Components/Search';
 import AudioContainer from './AudioContainer';
 import './../index.css';
 import 'whatwg-fetch';
 
-const clientID = "95f22ed54a5c297b1c41f72d713623ef";
 class App extends Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
-      data: [],
       currentTrack: "",
+      searchInput: "",
       query: "*"
     }
   }
 
-  apiRequest = () => {
-    fetch(`https://api.soundcloud.com/tracks?genres=synthwave&client_id=${clientID}&q=${this.state.query}&limit=50`).then(
-      function(response) {
-        return response.json()
-      }).then((json) => {
-        console.log('parsed json', json);
-        this.setState({data : json});
-
-      }).catch((ex) => {
-        console.log('parsing failed', ex);
-      })
+  searchSubmitHandler = (event) => {
+    event.preventDefault();
+    this.setState({query: this.state.searchInput});
   }
 
-  componentDidMount = () => {
-    this.apiRequest();
+  searchKeyPressHandler = (event) => {
+    if (event.key === 'Enter') {
+      this.searchSubmitHandler(event);
+    }
   }
 
-  currentTrackhandler = (track) =>{
-      this.setState({currentTrack : track});
+  searchValueHandler = (event) => {
+    event.preventDefault();
+    this.setState({searchInput: event.target.value});
 
-  }
-  
-  render() {
     console.log(this.state);
+  }
+
+  currentTrackHandler = (track) => {
+    this.setState({currentTrack : track});
+  }
+
+  render() {
     return (
-      <div className="app">
+      <div className = "app">
         <Container>
           <Header/>
-          <Search />
-          <Grid>
-            {      
-              this.state.data.map((track) =>{
+          <Search
+          searchKeyPressHandler={this.searchKeyPressHandler}
+          searchValueHandler={this.searchValueHandler}
+          searchSubmitHandler={this.searchSubmitHandler}
+          />
 
-                let background = track.artwork_url;
-                let artist = track.user.username;
-                let name = track.title;
-                let url = `${track.stream_url}?client_id=${clientID}`;
+          <GridContainer
+          query={this.state.query}
+          currentTrackHandler={this.currentTrackHandler}
+          />
 
-              return( <MusicItem 
-                key = {url}
-                background = {background}
-                artist = {artist}
-                name = {name}
-                url = {url}
-                currentTrackhandler = {this.currentTrackhandler}
-              />)
-            })
-            }
-             
-           </Grid>
-           <AudioContainer url={this.state.currentTrack}/>
+          <AudioContainer url={this.state.currentTrack}/>
         </Container>
       </div>
     );

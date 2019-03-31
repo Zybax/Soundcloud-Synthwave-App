@@ -7,7 +7,7 @@ export default function Header() {
         <NavBar/>
         <div className={"cta-container d-flex justify-content-center flex-wrap align-items-center "}>
           <h1 className={"cta-title"}>Listen To Some Rad Synthwave Tracks</h1>
-          <h4 className={"cta-sub-title"}>Search by Artist, Name or Subgenre</h4>
+          <h4 className={"cta-sub-title"}>Search by Album, Artist or Track Name </h4>
         </div>
       </header>
   )
