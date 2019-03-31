@@ -16,14 +16,11 @@ export default class GridContainer extends Component {
   }
 
   apiRequest = () => {
-    fetch(`https://api.soundcloud.com/tracks?genres=synthwave&client_id=${clientID}&q=${this.props.query}&limit=50`).then(
-      function(response) {
-        return response.json()
-      }).then((json) => {
-        this.setState({data : json});
-
-      }).catch((ex) => {
-        console.log('parsing failed', ex);
+    fetch(`https://api.soundcloud.com/tracks?genres=synthwave&client_id=${clientID}&q=${this.props.query}&limit=50`)
+      .then((res) => res.json())
+      .then((json) => this.setState({data : json}))
+      .catch((err) => {
+        console.error(err.message);
       })
   }
 
@@ -38,7 +35,6 @@ export default class GridContainer extends Component {
   }
 
   render() {
-    console.log(this.state.data);
     return this.state.data.length !== 0 ? (
       <div className = "grid-container">
           <Grid>

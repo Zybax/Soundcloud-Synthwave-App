@@ -32,8 +32,6 @@ class App extends Component {
   searchValueHandler = (event) => {
     event.preventDefault();
     this.setState({searchInput: event.target.value});
-
-    console.log(this.state);
   }
 
   currentTrackHandler = (track) => {
