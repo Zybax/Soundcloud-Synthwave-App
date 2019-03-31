@@ -1,3 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+    font-family: "Neon80s";
+
+    src: url("./fonts/Neon.woff") format("woff"), /* Modern Browsers */
+      url("./fonts/Neon.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
 a {
     text-decoration: none;
     color: #fff;
@@ -38,13 +48,13 @@ a:hover {
     -moz-border-radius: 0px 3px 3px 0px;
     -ms-border-radius: 0px 3px 3px 0px;
     -o-border-radius: 0px 3px 3px 0px;
-    background-color: #62058a;
-    border-color: #62058a;
+    background-color: #5b0680;
+    border-color: #5b0680;
 }
 
 .custom-btn:hover {
-    background-color: #480166;
-    border-color: #480166;
+    background-color: #4a0468;
+    border-color: #4a0468;
 }
 
 .container {
@@ -55,17 +65,16 @@ a:hover {
 .cta-sub-title,
 .cta-title {
     color: white;
-    width: 100%;
+    width: 80%;
     text-align: center;
     height: auto;
 }
 
 .cta-container {}
 
-.cta-sub-title {}
-
-.cta-title {
-    font-size: 2.2rem;
+.cta-sub-title {
+    font-family: "Neon80s";
+    font-size: 1.5rem;
 }
 
 .fa-play {
@@ -87,7 +96,8 @@ a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
-    height: 45vh;
+    height: 60vh;
+
 }
 
 .input-search {
@@ -127,7 +137,7 @@ a:hover {
 .music-item:hover .music-item-image-container {
     box-shadow: inset 0px -5px 120px rgba(0, 0, 0, 0.486);
     cursor: pointer;
-    box-shadow: 0 0 5px #480166;
+    box-shadow: 0 0 5px #5b0680;
 }
 
 .music-item:hover .music-options {
@@ -165,6 +175,10 @@ a:hover {
     text-align: center;
 }
 
+.logo-container {
+    padding-bottom: 60px;
+}
+
 .overlay {
     background: rgba(0, 0, 0, 0.411);
     position: absolute;
@@ -172,12 +186,38 @@ a:hover {
     height: 100%;
 }
 
+.pagination-list{
+    width: 100%;
+    padding-left: 0px;
+}
+
+.pagination-list-item{
+    margin: 0px 15px 0px 0px;
+    padding: 5px;
+    list-style: none;
+    font-size: 20px;
+    font-family: "Neon80s";
+}
+
+.pagination-list-current{
+    color: #9709bb;
+}
+
+.pagination-list-item:hover{
+    cursor: pointer;
+}
+
+.pagination-container{
+    margin-top:35px;
+    padding-bottom: 15%;
+}
+
 .play-icon {
     width: 55px;
     height: 55px;
     border: none;
     border-radius: 100px;
-    background: #450DA0;
+    background: #7b04ad;
     color: white;
     font-weight: bold;
     margin-top: 40px;
