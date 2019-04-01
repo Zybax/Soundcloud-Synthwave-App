@@ -7,8 +7,8 @@ return (
   <NavBar />
   <div className={"cta-container d-flex justify-content-center flex-wrap align-items-center "}>
 
-  <div className={"logo-container d-flex justify-content-center"}>
-      <h1 className={"chrome"}>RETRO</h1>
+  <div className={"logo-container d-flex flex-column align-items-center"}>
+      <h1 className={"logo"}>RETRO</h1>
       <h3 className={"dreams"}>Dreams</h3>
   </div>
 

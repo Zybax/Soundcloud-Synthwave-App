@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:900);
 
-.chrome {
+.logo {
     position: relative;
     background-image: -webkit-linear-gradient(#20004B 30%,#6F00FF 50%, rgb(238, 238, 238) 55%, #20004B 65%,#C900FF 80%, #ffff 100%);
     -webkit-background-clip: text;
@@ -15,7 +15,7 @@
     padding-right: 20px;
 }
 
-.chrome:before {
+.logo:before {
     content: 'RETRO';
     position: absolute;
     left: 0;
@@ -34,18 +34,16 @@
 }
 
 .dreams {
-    position: absolute;
+    position: relative;
     margin: 0px;
     font-family: 'Mr Dafoe', cursive;
     font-size: 55px;
     color: #F975F7;
     transform: rotate(-15deg);
     -ms-transform: rotate(-15deg);
-    /* IE 9 */
     -webkit-transform: rotate(-15deg);
-    /* Safari and Chrome */
-    margin-left: 180px;
-    margin-top: 55px;
+     margin-top: -45px;
+     margin-left: 180px;
     -webkit-text-stroke: 1px #f008b7;
     -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
     z-index: 20;
@@ -67,18 +65,18 @@
 /* Desktop styles*/
 
 @media screen and (min-width: 768px) {
-    .chrome {
+    .logo {
         font-size: 150px;
     }
 
-    .chrome:before {
+    .logo:before {
         padding-right: 160px;
     }
 
     .dreams {
         font-size: 85px;
-        margin-left: 280px;
-        margin-top: 85px;
+        margin-top: -65px;
+        margin-left: 240px;
     }
 
     @-webkit-keyframes chrome_effect {
