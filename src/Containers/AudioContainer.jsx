@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 export default class AudioContainer extends Component {
 
+  // Plays a track when received through props
   componentDidUpdate(prevProps) {
     if (this.props.url !== prevProps.url) {
       document.querySelector('#audio-player').play();
     }
   }
-
 
   render() {
     return (
