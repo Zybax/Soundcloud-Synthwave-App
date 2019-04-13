@@ -1,25 +1,27 @@
+@import "styles/retroTitle";
+@import "styles/variables";
+
 /* font converted using font-converter.net. thank you! */
 @font-face {
     font-family: "Neon80s";
-
-    src: url("./fonts/Neon.woff") format("woff"), /* Modern Browsers */
-      url("./fonts/Neon.woff2") format("woff2"); /* Modern Browsers */
+    src: url("./fonts/Neon.woff") format("woff"), url("./fonts/Neon.woff2") format("woff2");
+    /* Modern Browsers */
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 a {
     text-decoration: none;
-    color: #fff;
-}
+    color: $white;
 
-a:hover {
-    color: #fff;
-    text-decoration: none;
+    &:hover {
+        color: $white;
+        text-decoration: none;
+    }
 }
 
 .artist-name {
-    color: rgb(185, 185, 185);
+    color: $white;
 }
 
 .audio-container {
@@ -37,9 +39,9 @@ a:hover {
 }
 
 .app {
-    background: #1a1b1f;
+    background: $background_main;
     height: 100%;
-    color: #fff;
+    color: $white;
 }
 
 .custom-btn {
@@ -48,29 +50,27 @@ a:hover {
     -moz-border-radius: 0px 3px 3px 0px;
     -ms-border-radius: 0px 3px 3px 0px;
     -o-border-radius: 0px 3px 3px 0px;
-    background-color: #5b0680;
-    border-color: #5b0680;
-}
+    background-color: $purple;
+    border-color: $purple;
 
-.custom-btn:hover {
-    background-color: #4a0468;
-    border-color: #4a0468;
+    &:hover {
+        background-color: $purple_hover;
+        border-color: $purple_hover;
+    }
 }
 
 .container {
-    background: #1D1F24;
+    background: $background_container;
     padding: 0px;
 }
 
 .cta-sub-title,
 .cta-title {
-    color: white;
+    color: $white;
     width: 80%;
     text-align: center;
     height: auto;
 }
-
-.cta-container {}
 
 .cta-sub-title {
     font-family: "Neon80s";
@@ -97,7 +97,6 @@ a:hover {
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     height: 50vh;
-
 }
 
 .input-search {
@@ -111,8 +110,27 @@ a:hover {
 
 .music-item {
     width: 160px;
-    color: white;
+    color: $white;
+    -webkit-transition: 0.25s;
     transition: 0.25s;
+
+    &:hover {
+        cursor: pointer;
+
+        .music-item-image-container {
+            -webkit-box-shadow: inset 0px -5px 120px $shadow;
+            box-shadow: inset 0px -5px 120px $shadow;
+            cursor: pointer;
+            -webkit-box-shadow: 0 0 5px $purple;
+            box-shadow: 0 0 5px $purple;
+        }
+
+        .music-options,
+        .play-icon {
+            opacity: 1;
+        }
+
+    }
 }
 
 .music-item-container {
@@ -123,34 +141,19 @@ a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
+    background-color: $black;
     width: 140px;
     height: 140px;
+    -webkit-transition: 0.25s;
     transition: 0.25s;
     border-radius: 3px;
-}
-
-.music-item:hover {
-    cursor: pointer;
-}
-
-.music-item:hover .music-item-image-container {
-    box-shadow: inset 0px -5px 120px rgba(0, 0, 0, 0.486);
-    cursor: pointer;
-    box-shadow: 0 0 5px #5b0680;
-}
-
-.music-item:hover .music-options {
-    opacity: 1;
-}
-
-.music-item:hover .play-icon {
-    opacity: 1;
 }
 
 .music-item-info {
     width: 140px;
     text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -158,8 +161,9 @@ a:hover {
     width: 100%;
     height: 40px;
     margin-top: 10px;
-    color: white;
+    color: $white;
     opacity: 0;
+    -webkit-transition: 0.25s;
     transition: 0.25s;
 }
 
@@ -171,7 +175,7 @@ a:hover {
     padding-bottom: 20%;
 }
 
-.not-found-message{
+.not-found-message {
     text-align: center;
 }
 
@@ -180,18 +184,18 @@ a:hover {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.411);
+    background: $shadow;
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.pagination-list{
+.pagination-list {
     width: 100%;
     padding-left: 0px;
 }
 
-.pagination-list-item{
+.pagination-list-item {
     margin: 0px 15px 0px 0px;
     padding: 5px;
     list-style: none;
@@ -199,16 +203,16 @@ a:hover {
     font-family: "Neon80s";
 }
 
-.pagination-list-current{
-    color: #9709bb;
+.pagination-list-current {
+    color: $purple_light;
 }
 
-.pagination-list-item:hover{
+.pagination-list-item:hover {
     cursor: pointer;
 }
 
-.pagination-container{
-    margin-top:35px;
+.pagination-container {
+    margin-top: 35px;
     padding-bottom: 15%;
 }
 
@@ -217,12 +221,13 @@ a:hover {
     height: 55px;
     border: none;
     border-radius: 100px;
-    background: #7b04ad;
-    color: white;
+    background: $purple;
+    color: $white;
     font-weight: bold;
     margin-top: 40px;
     text-align: center;
     opacity: 0;
+    -webkit-transition: 0.25s;
     transition: 0.25s;
 }
 
@@ -247,12 +252,15 @@ a:hover {
     }
 
     .music-item {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
-    }
 
-    .music-item-info {
-        text-align: left;
-        align-items: flex-start;
+        .music-item-info {
+            text-align: left;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
     }
-
 }
