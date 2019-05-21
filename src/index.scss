@@ -1,5 +1,5 @@
-@import "styles/retroTitle";
-@import "styles/variables";
+@import "./styles/variables";
+@import "./styles/retroTitle";
 
 /* font converted using font-converter.net. thank you! */
 @font-face {
@@ -196,19 +196,40 @@ a {
 }
 
 .pagination-list-item {
-    margin: 0px 15px 0px 0px;
-    padding: 5px;
+    padding: 7px 15px;
     list-style: none;
     font-size: 20px;
     font-family: "Neon80s";
+    background: $shadow;
+    border-right: 1px solid $black;
+    box-shadow: 0 0 5px $shadow;
+
+    &:first-child {
+        border-radius: 3px 0px 0px 3px;
+        -webkit-border-radius: 3px 0px 0px 3px;
+        -moz-border-radius: 3px 0px 0px 3px;
+        -ms-border-radius: 3px 0px 0px 3px;
+        -o-border-radius: 3px 0px 0px 3px;
+    }
+
+    &:last-child {
+        border-radius: 0px 3px 3px 0px;
+        -webkit-border-radius: 0px 3px 3px 0px;
+        -moz-border-radius: 0px 3px 3px 0px;
+        -ms-border-radius: 0px 3px 3px 0px;
+        -o-border-radius: 0px 3px 3px 0px;
+        border-right: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background: $purple_hover;
+    }
+
 }
 
 .pagination-list-current {
-    color: $purple_light;
-}
-
-.pagination-list-item:hover {
-    cursor: pointer;
+    background: $purple_light;
 }
 
 .pagination-container {
