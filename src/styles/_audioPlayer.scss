@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.audio-player {
+  border-radius: 3px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 310px;
+  width: 94%;
+  max-width: 1200px;
+  height: 60px;
+  background: white;
+  color: #576574;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
+.audio-player__controls {
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.audio-player__button-container {
+  margin-left: 5px;
+  font-size: 26px;
+
+  .play-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.audio-player__timer-container {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+
+  .timer-divider {
+    padding: 0px 2px;
+  }
+}
+
+
+
+.audio-player__range-container {
+  width: 90%;
+
+  .progression-bar {
+    width: 100%;
+    background: gray;
+    height: 7px;
+
+
+    &:hover {
+      cursor: pointer;
+
+      .progression-bar__playhead {
+        opacity: 1;
+      }
+    }
+
+    .progression-bar__playhead {
+      position: relative;
+      width: 15px;
+      height: 15px;
+      background: #4200f7;
+      border-radius: 50%;
+      transform: translateY(-11px);
+      transition: opacity 0.1s ease-in-out;
+      opacity: 0;
+    }
+
+    .progression-bar__timeline {
+      width: 0px;
+      height: 7px;
+      background: #4200f7;
+    }
+  }
+}
+
+
+.audio-player__volume-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
+  .volume-icon-container {
+    font-size: 26px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .volume-range {
+    width: 75px;
+    margin-left: 10px;
+  }
+
+}
+
+.volume-range {
+  .volume-bar {
+    width: 100%;
+    background: gray;
+    height: 7px;
+
+    &:hover {
+      cursor: pointer;
+
+      .volume-bar__head {
+        opacity: 1;
+      }
+    }
+
+    .volume-bar__line {
+      width: 100%;
+      height: 7px;
+      background: #4200f7;
+    }
+
+    .volume-bar__head {
+      position: relative;
+      width: 14px;
+      margin-left: 89%;
+      height: 14px;
+      background: #4200f7;
+      border-radius: 50%;
+      transform: translateY(-11px);
+      transition: opacity 0.1s ease-in-out;
+      opacity: 0;
+    }
+  }
+}
