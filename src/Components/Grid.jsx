@@ -7,4 +7,3 @@ export default function Grid(props) {
   </div>
   )
 }
-

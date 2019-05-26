@@ -25,20 +25,6 @@ a {
     color: $white;
 }
 
-.audio-container {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-}
-
-.audio-player {
-    outline: none;
-    width: 100%;
-    height: 100%;
-}
-
 .app {
     background: $background_main;
     height: 100%;
@@ -65,19 +51,6 @@ a {
     padding: 0px;
 }
 
-.cta-sub-title,
-.cta-title {
-    color: $white;
-    width: 80%;
-    text-align: center;
-    height: auto;
-}
-
-.cta-sub-title {
-    font-family: "Neon80s";
-    font-size: 1.5rem;
-}
-
 .fa-play {
     margin-left: 3px;
 }
@@ -87,17 +60,37 @@ a {
     margin-right: 10px;
 }
 
-.grid {
-    padding: 0px 9px;
-}
-
 .header {
     background-image: url("./assets/headerbackground.jpg");
     background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
-    height: 50vh;
+    height: 320px;
+
+    .header__sub-title ,
+    .header__title {
+        color: $white;
+        width: 80%;
+        text-align: center;
+        height: auto;
+    }
+
+    .header__sub-title {
+        font-family: "Neon80s";
+        font-size: 1.5rem;
+        text-shadow: 2px 2px $shadow;
+    }
+}
+
+.grid {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.grid-container {
+    width: 96%;
+    margin: auto;
 }
 
 .input-search {
@@ -136,6 +129,8 @@ a {
 
 .music-item-container {
     margin-bottom: 25px;
+    padding: 0;
+
 }
 
 .music-item-image-container {
@@ -201,9 +196,15 @@ a {
     list-style: none;
     font-size: 20px;
     font-family: "Neon80s";
-    background: $shadow;
+    background: $black_light;
     border-right: 1px solid $black;
+    -webkit-box-shadow: 0 0 5px $shadow;
     box-shadow: 0 0 5px $shadow;
+    transition: 0.15s ease-in-out;
+    -webkit-transition: 0.15s ease-in-out;
+    -moz-transition: 0.15s ease-in-out;
+    -ms-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
 
     &:first-child {
         border-radius: 3px 0px 0px 3px;
@@ -268,9 +269,13 @@ a {
 /* Desktop styles*/
 
 @media screen and (min-width: 768px) {
-    .cta-title {
-        font-size: 3rem;
-        width: 70%;
+    .header {
+        height: 400px;
+
+        .header__title {
+            font-size: 3rem;
+            width: 70%;
+        }
     }
 
     .music-item {

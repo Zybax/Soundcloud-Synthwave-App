@@ -7,7 +7,6 @@ import AudioContainer from './AudioContainer';
 import './../index.scss';
 import 'whatwg-fetch';
 
-
 class App extends Component {
   constructor(props) {
     super(props)
