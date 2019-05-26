@@ -74,9 +74,9 @@ export default class GridContainer extends Component {
   render() {
     return (
       <div className = "grid-container">
-        <Suspense fallback={<div>Loading...</div>}>  
+        <Suspense fallback={<div>Loading...</div>}>
           {this.state.data.length !== 0 ?
-            <Grid>   
+            <Grid>
               {
                   this.paginationItemsSetup().map((track) =>{
 
@@ -94,10 +94,10 @@ export default class GridContainer extends Component {
                     currentTrackhandler = {this.props.currentTrackHandler}
                 />)
               })
-              }           
-            </Grid> : <NotFound/>    
+              }
+            </Grid> : <NotFound/>
             }
-          </Suspense> 
+          </Suspense>
            <PageNumbers
            pageNumbers = {this.pageNumbersSetup()}
            handlePageClick = {this.handlePageClick}
