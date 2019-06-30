@@ -16,6 +16,7 @@
 }
 
 .audio-player {
+  box-shadow: 0 0 5px $shadow;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,6 +57,7 @@
   font-size: 26px;
 
   .play-button {
+    text-shadow: 0 0 5px $shadow;
     &:hover {
       cursor: pointer;
     }
@@ -63,6 +65,7 @@
 }
 
 .audio-player__timer-container {
+  text-shadow: 0 0 5px $shadow;
   margin: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,7 +86,7 @@
     width: 100%;
     background: gray;
     height: 7px;
-
+    box-shadow: 0 0 5px $shadow;
     &:hover {
       cursor: pointer;
 
@@ -93,6 +96,7 @@
     }
 
     .progression-bar__playhead {
+      box-shadow: 0 0 5px $shadow;
       position: relative;
       width: 15px;
       height: 15px;
@@ -124,7 +128,7 @@
 
   .volume-icon-container {
     font-size: 26px;
-
+    text-shadow: 0 0 5px $shadow;
     &:hover {
       cursor: pointer;
     }
@@ -142,7 +146,7 @@
     width: 100%;
     background: gray;
     height: 7px;
-
+    box-shadow: 0 0 5px $shadow;
     &:hover {
       cursor: pointer;
 
@@ -163,6 +167,7 @@
       margin-left: 89%;
       height: 14px;
       background: $purple;
+      box-shadow: 0 0 5px $shadow;
       border-radius: 50%;
       -webkit-transform: translateY(-11px);
       transform: translateY(-11px);

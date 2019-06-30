@@ -29,6 +29,13 @@ a {
     background: $background_main;
     height: 100%;
     color: $white;
+
+    .container {
+        background: $background_container;
+        padding: 0px;
+        box-shadow: 0 0 5px $shadow;
+    }
+
 }
 
 .custom-btn {
@@ -46,11 +53,6 @@ a {
     }
 }
 
-.container {
-    background: $background_container;
-    padding: 0px;
-}
-
 .fa-play {
     margin-left: 3px;
 }
@@ -65,10 +67,10 @@ a {
     background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
+    box-shadow: 0 0 5px $shadow;
     height: 320px;
 
-    .header__sub-title ,
+    .header__sub-title,
     .header__title {
         color: $white;
         width: 80%;
@@ -107,6 +109,11 @@ a {
     color: $white;
     -webkit-transition: 0.25s;
     transition: 0.25s;
+
+    .music-item-image-container {
+        -webkit-box-shadow: 0 0 5px $shadow;
+        box-shadow: 0 0 5px $shadow;
+    }
 
     &:hover {
         cursor: pointer;
@@ -161,10 +168,6 @@ a {
     opacity: 0;
     -webkit-transition: 0.25s;
     transition: 0.25s;
-}
-
-.nav {
-    width: 90%;
 }
 
 .not-found {
@@ -256,6 +259,8 @@ a {
 
 .search-form {
     width: 70%;
+    -webkit-box-shadow: 0 0 5px $shadow;
+    box-shadow: 0 0 5px $shadow;
 }
 
 .search-form-container {
