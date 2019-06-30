@@ -21,20 +21,20 @@ export default class AudioContainer extends Component {
     this.volumeBar = document.querySelector('#volume-bar');
     this.volumeLine = document.querySelector('#volume-line');
     this.volumeHead = document.querySelector('#volume-head');
-    this.duration = "";
+    this.duration = '';
     window.onload = this.addListeners();
   }
 
   // Play and pause audio
-  toogleAudio = () =>{
-    if (this.audioTrack.getAttribute('src') !== ""){
+  toogleAudio = () => {
+    if (this.audioTrack.getAttribute('src') !== ''){
       if (this.audioTrack.paused){
-        this.playButton.classList.replace("fa-play","fa-pause");
+        this.playButton.classList.replace('fa-play','fa-pause');
         this.audioTrack.play();
       }
       else
       {
-        this.playButton.classList.replace("fa-pause","fa-play");
+        this.playButton.classList.replace('fa-pause','fa-play');
         this.audioTrack.pause();
       }
     }
@@ -44,7 +44,7 @@ export default class AudioContainer extends Component {
 timeUpdate = () => {
   if (this.duration === this.getTrackDuration())  this.getTrackDuration();
   if (this.audioTrack.currentTime ===  this.duration){
-    this.playButton.classList.replace("fa-pause","fa-play");
+    this.playButton.classList.replace('fa-pause','fa-play');
   }
 
   this.timerUpdate();
@@ -59,23 +59,23 @@ timerUpdate = () => {
  let currentMinutes = parseInt( this.audioTrack.currentTime / 60, 10);
  let currentSeconds = parseInt( this.audioTrack.currentTime % 60);
 
- this.totalTime.innerHTML = totalMinutes + ":" + totalSeconds;
- this.currentTime.innerHTML = currentMinutes + ":" + currentSeconds;
+ this.totalTime.innerHTML = totalMinutes + ':' + totalSeconds;
+ this.currentTime.innerHTML = currentMinutes + ':' + currentSeconds;
 
 }
 
 // Fills the progression bar
 progressionUpdate = () => {
   let playPercent = 100 * ( this.audioTrack.currentTime /  this.duration);
-  this.timeline.style.width = playPercent + "%";
-  this.playhead.style.marginLeft = (playPercent - 1.2) + "%";
+  this.timeline.style.width = playPercent + '%';
+  this.playhead.style.marginLeft = (playPercent - 1.2) + '%';
 }
 
 // Gets audio file duration
 getTrackDuration = () =>{
   if( this.audioTrack.readyState > 0)
     {
-      this.duration =  this.audioTrack.duration;
+      this.duration = this.audioTrack.duration;
     }
 }
 
@@ -85,22 +85,22 @@ getPosition = (el) => {
 }
 
 // Sets new position of the progression bar when clicked
-setProgressionPosition = (event) =>{
+setProgressionPosition = (event) => {
     if (!this.duration) this.getTrackDuration();
     this.audioTrack.currentTime = ( this.clickPercent(event,  this.progressionBar) *  this.duration);
   }
 
  // Toggle the volume
-toogleVolume = () =>{
+toogleVolume = () => {
     if ( this.audioTrack.muted){
-      this.volumeIcon.classList.replace("fa-volume-mute","fa-volume-up");
+      this.volumeIcon.classList.replace('fa-volume-mute','fa-volume-up');
       this.volumeLine.style.display = 'block';
       this.volumeHead.style.display = 'block';
       this.audioTrack.muted = false;
     }
     else
     {
-      this.volumeIcon.classList.replace("fa-volume-up","fa-volume-mute");
+      this.volumeIcon.classList.replace('fa-volume-up','fa-volume-mute');
       this.volumeLine.style.display = 'none';
       this.volumeHead.style.display = 'none';
       this.audioTrack.muted = true;
@@ -116,7 +116,7 @@ volumeUpdate = (event) => {
 }
 
 // Sets audio volume
-setVolume = (event) =>{
+setVolume = (event) => {
   let volumeLevel = this.clickPercent(event,  this.volumeBar);
 
   if(volumeLevel <= 0){
@@ -134,8 +134,8 @@ setVolume = (event) =>{
 // Fills the volume  bar
 volumeBarUpdate = () => {
   let volumePercent = 100 * ( this.audioTrack.volume / 1);
-  this.volumeLine.style.width = volumePercent + "%";
-  this.volumeHead.style.marginLeft = (volumePercent - 6) + "%";
+  this.volumeLine.style.width = volumePercent + '%';
+  this.volumeHead.style.marginLeft = (volumePercent - 6) + '%';
 }
 
 // Returns the percent of the bar when clicked related to the bar's width
@@ -145,14 +145,13 @@ clickPercent = (event, bar) => {
 }
 
 // Removes events on mouse up
-mouseUpEventRemove = () =>
-{
+mouseUpEventRemove = () => {
     window.removeEventListener('mousemove',  this.playHeadMove, true);
     window.removeEventListener('mousemove',  this.volumeHeadMove, true);
 }
 
 // Adds mousemove event on mousedown with a specified function
-mouseDown = (event, func) =>{
+mouseDown = (event, func) => {
   window.addEventListener('mousemove', func, true);
 }
 
@@ -160,60 +159,60 @@ playHeadMove = (event) => {
   this.setProgressionPosition(event);
 }
 
-volumeHeadMove = (event) =>{
+volumeHeadMove = (event) => {
   this.volumeUpdate(event);
 }
 
 // Listeners
 addListeners = () =>{
-  this.audioTrack.addEventListener("timeupdate",  this.timeUpdate, false);
+  this.audioTrack.addEventListener('timeupdate',  this.timeUpdate, false);
   this.playButton.addEventListener('click',  this.toogleAudio, false);
-  this.progressionBar.addEventListener("click",  this.setProgressionPosition, false);
-  this.progressionBar.addEventListener("mousedown", (event) => { this.mouseDown(event,  this.playHeadMove)}, false);
+  this.progressionBar.addEventListener('click',  this.setProgressionPosition, false);
+  this.progressionBar.addEventListener('mousedown', (event) => { this.mouseDown(event,  this.playHeadMove)}, false);
   this.playhead.addEventListener('mousedown', (event) => { this.mouseDown(event, this.playHeadMove)}, false);
-  this.volumeBar.addEventListener("click",  this.volumeUpdate, false);
+  this.volumeBar.addEventListener('click',  this.volumeUpdate, false);
   this.volumeBar.addEventListener('mousedown', (event) => {  this.mouseDown(event, this.volumeHeadMove)}, false);
-  this.volumeIcon.addEventListener("click",  this.toogleVolume, false);
+  this.volumeIcon.addEventListener('click',  this.toogleVolume, false);
   this.volumeHead.addEventListener('mousedown', (event) => { this.mouseDown(event, this.volumeHeadMove)}, false);
   window.addEventListener('mouseup',  this.mouseUpEventRemove, false);
 }
 
   render() {
     return (
-      <div className ={"audio-container"}>
-        <div className={"audio-player"}>
-          <div className={"audio-player__controls"}>
-            <div className={"audio-player__button-container"}>
-              <i id="playButton" className={"fas fa-play play-button"}></i>
+      <div className ={'audio-container'}>
+        <div className={'audio-player'}>
+          <div className={'audio-player__controls'}>
+            <div className={'audio-player__button-container'}>
+              <i id='playButton' className={'fas fa-play play-button'}></i>
             </div>
 
-            <div className={"audio-player__timer-container"}>
-              <span id="timer-current-time" className={"timer-current-time"}> 00:00 </span>
-              <span className={"timer-divider"}> / </span>
-              <span id="timer-total-time" className={"timer-total-time"}> 00:00 </span>
+            <div className={'audio-player__timer-container'}>
+              <span id='timer-current-time' className={'timer-current-time'}> 00:00 </span>
+              <span className={'timer-divider'}> / </span>
+              <span id='timer-total-time' className={'timer-total-time'}> 00:00 </span>
             </div>
 
-            <div className={"audio-player__range-container"}>
-              <div id="progression-bar" className={"progression-bar"}>
-                <div id="timeline" className={"progression-bar__timeline"}></div>
-                <div id="playhead" className={"progression-bar__playhead"}></div>
+            <div className={'audio-player__range-container'}>
+              <div id='progression-bar' className={'progression-bar'}>
+                <div id='timeline' className={'progression-bar__timeline'}></div>
+                <div id='playhead' className={'progression-bar__playhead'}></div>
               </div>
             </div>
 
-            <div className={"audio-player__volume-container"}>
-              <div className={"volume-icon-container"}>
-                <i id="volume-icon" className={"fas fa-volume-up"}></i>
+            <div className={'audio-player__volume-container'}>
+              <div className={'volume-icon-container'}>
+                <i id='volume-icon' className={'fas fa-volume-up'}></i>
               </div>
 
-              <div className={"volume-range"}>
-                <div id="volume-bar" className={"volume-bar"}>
-                  <div id="volume-line" className={"volume-bar__line"}></div>
-                  <div id="volume-head" className={"volume-bar__head"}></div>
+              <div className={'volume-range'}>
+                <div id='volume-bar' className={'volume-bar'}>
+                  <div id='volume-line' className={'volume-bar__line'}></div>
+                  <div id='volume-head' className={'volume-bar__head'}></div>
                 </div>
               </div>
             </div>
 
-              <audio id={"audio-player"} src={this.props.url}></audio>
+              <audio id={'audio-player'} src={this.props.url}></audio>
 
           </div>
         </div>

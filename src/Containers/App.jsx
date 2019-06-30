@@ -12,9 +12,9 @@ class App extends Component {
     super(props)
 
     this.state = {
-      currentTrack: "",
-      searchInput: "",
-      query: "*"
+      currentTrack: '',
+      searchInput: '',
+      query: '*'
     }
   }
 
@@ -44,7 +44,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className = "app">
+      <div className = 'app'>
       <Container>
         <Header/>
         <Search
@@ -54,7 +54,7 @@ class App extends Component {
         />
 
         <GridContainer
-            genre={"synthwave"}
+            genre={'synthwave'}
             query={this.state.query}
             currentTrackHandler={this.currentTrackHandler}
         />

@@ -59,7 +59,7 @@ export default class GridContainer extends Component {
     return currentItems;
   }
 
-  // Sets de number of pages 
+  // Sets the number of pages
   pageNumbersSetup = () => {
     const pageNumbers = [];
 
@@ -73,7 +73,7 @@ export default class GridContainer extends Component {
 
   render() {
     return (
-      <div className = "grid-container">
+      <div className = 'grid-container'>
         <Suspense fallback={<div>Loading...</div>}>
           {this.state.data.length !== 0 ?
             <Grid>
@@ -103,7 +103,7 @@ export default class GridContainer extends Component {
            handlePageClick = {this.handlePageClick}
            currentPage={this.state.currentPage}
            />
-            
+
       </div>
     )
   }
