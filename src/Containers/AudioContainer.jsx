@@ -51,6 +51,14 @@ timeUpdate = () => {
   this.progressionUpdate();
 }
 
+// this funtions format the time so it is shown as mm:ss
+formatTime(minutes, seconds){
+ let formattedMin = minutes.toString().length === 1 ? `0${minutes}`: minutes;
+ let formattedSec = seconds.toString().length === 1 ? `0${seconds}`: seconds;
+
+ return `${formattedMin}:${formattedSec}`
+}
+
 // Update the timer
 timerUpdate = () => {
  const totalMinutes = parseInt( this.duration / 60, 10);
@@ -59,8 +67,8 @@ timerUpdate = () => {
  let currentMinutes = parseInt( this.audioTrack.currentTime / 60, 10);
  let currentSeconds = parseInt( this.audioTrack.currentTime % 60);
 
- this.totalTime.innerHTML = totalMinutes + ':' + totalSeconds;
- this.currentTime.innerHTML = currentMinutes + ':' + currentSeconds;
+ this.totalTime.innerHTML = this.formatTime( totalMinutes, totalSeconds);
+ this.currentTime.innerHTML = this.formatTime( currentMinutes, currentSeconds);
 
 }
 
@@ -90,7 +98,7 @@ setProgressionPosition = (event) => {
     this.audioTrack.currentTime = ( this.clickPercent(event,  this.progressionBar) *  this.duration);
   }
 
- // Toggle the volume
+ // Toggles the volume
 toogleVolume = () => {
     if ( this.audioTrack.muted){
       this.volumeIcon.classList.replace('fa-volume-mute','fa-volume-up');
