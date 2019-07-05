@@ -20,10 +20,10 @@ node.js v10.15.3
 
 ## Soundcloud tracks not working?
 
-Well basically soundcloud is not giving anymore keys for their public api, to be honest this is not even my key...
+Well... basically soundcloud is not giving anymore keys for their public api, to be honest this is not even my key...
 
 and a bunch of people are using it too, which means... there is a big chance that the key has already reached the daily request limit when you were trying to listen to something.
 
-A shame indeed... 
+A shame indeed, although i might be able to provide a second key.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
