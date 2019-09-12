@@ -7,21 +7,13 @@ import AudioContainer from './AudioContainer';
 import './../index.scss';
 import 'whatwg-fetch';
 
+
 class App extends Component {
-  constructor(props) {
-    super(props)
 
-    this.state = {
-      currentTrack: '',
-      searchInput: '',
-      query: '*'
-    }
-  }
-
-  // Sets the search query for the api call
+// Sets the search query for the api call
   searchSubmitHandler = (event) => {
     event.preventDefault();
-    this.setState({query: this.state.searchInput});
+    this.props.setApiQuery(this.props.searchInput);
   }
 
   // Calls searchSubmitHandler when you press enter in the search textbox
@@ -34,12 +26,12 @@ class App extends Component {
   // Adds the value from the search textbox into the state
   searchValueHandler = (event) => {
     event.preventDefault();
-    this.setState({searchInput: event.target.value});
+    this.props.searchTrack(event.target.value);
   }
 
   // Sets the current track being played
   currentTrackHandler = (track) => {
-    this.setState({currentTrack : track});
+    this.props.changeTrack(track);
   }
 
   render() {
@@ -54,12 +46,12 @@ class App extends Component {
         />
 
         <GridContainer
-            genre={'synthwave'}
-            query={this.state.query}
-            currentTrackHandler={this.currentTrackHandler}
+            genre = {'synthwave'}
+            query = {this.props.query}
+            currentTrackHandler = {this.currentTrackHandler}
         />
 
-        <AudioContainer url={this.state.currentTrack}/>
+        <AudioContainer url={this.props.currentTrack}/>
       </Container>
     </div>
     );

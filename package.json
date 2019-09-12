@@ -1,23 +1,28 @@
 {
   "name": "soundcloud-app",
-  "version": "0.1.0",
+  "homepage": "https://zybax.github.io/Retro-Dreams/",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-media-player": "^0.7.6",
+    "react-redux": "^7.1.1",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.8",
+    "redux": "^4.0.4",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
