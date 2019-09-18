@@ -10,29 +10,6 @@ import 'whatwg-fetch';
 
 class App extends Component {
 
-// Sets the search query for the api call
-  searchSubmitHandler = (event) => {
-    event.preventDefault();
-    this.props.setApiQuery(this.props.searchInput);
-  }
-
-  // Calls searchSubmitHandler when you press enter in the search textbox
-  searchKeyPressHandler = (event) => {
-    if (event.key === 'Enter') {
-      this.searchSubmitHandler(event);
-    }
-  }
-
-  // Adds the value from the search textbox into the state
-  searchValueHandler = (event) => {
-    event.preventDefault();
-    this.props.searchTrack(event.target.value);
-  }
-
-  // Sets the current track being played
-  currentTrackHandler = (track) => {
-    this.props.changeTrack(track);
-  }
 
   render() {
     return (
@@ -40,15 +17,11 @@ class App extends Component {
       <Container>
         <Header/>
         <Search
-        searchKeyPressHandler={this.searchKeyPressHandler}
-        searchValueHandler={this.searchValueHandler}
-        searchSubmitHandler={this.searchSubmitHandler}
+        {...this.props}
         />
 
         <GridContainer
-            genre = {'synthwave'}
-            query = {this.props.query}
-            currentTrackHandler = {this.currentTrackHandler}
+            {...this.props}
         />
 
         <AudioContainer url={this.props.currentTrack}/>

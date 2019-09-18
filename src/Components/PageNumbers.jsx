@@ -6,12 +6,14 @@ export default function PageNumbers(props) {
     <div className={'pagination-container d-flex justify-content-center'}>
       <ul className={'pagination-list d-flex justify-content-center'}>{
       props.pageNumbers.map(number => {
+
       return (
         <li
-        className={'pagination-list-item' + (props.currentPage === number ? ' pagination-list-current':'')}
+        className={'pagination-list-item' + (parseInt(props.currentPage) === number ? ' pagination-list-current':'')}
         key={number}
         id={number}
-        onClick={props.handlePageClick}
+        onClick={(event) =>{ 
+          props.selectPage(event.target.id) }}
         >
           {number}
         </li>
@@ -25,5 +27,6 @@ export default function PageNumbers(props) {
 
 PageNumbers.propTypes = {
     pageNumbers: PropTypes.array.isRequired,
-    handlePageClick: PropTypes.func.isRequired
+    selectPage: PropTypes.func.isRequired,
+    currentPage: PropTypes.number.isRequired
   };
